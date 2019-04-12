@@ -1,0 +1,50 @@
+#include<iostream>
+
+using namespace std;
+
+double NilaiG(string text){
+    double ni;
+    cout<<" Inputkan nilai "<<text<<" :";cin>>ni;
+return ni;
+}
+
+void IF(double total){
+if (total>=81&&total<=100)
+    cout<<" A "<<endl;
+else if (total>=61&&total<=80)
+    cout<<" B "<<endl;
+else if (total>=41&&total<=60)
+    cout<<" C "<<endl;
+else if (total>=21&&total<=40)
+    cout<<" D "<<endl;
+else if (total>=0&&total<=20)
+    cout<<" E "<<endl;
+}
+
+struct semuani{
+double nilai[5],jml[5];};semuani SNI;
+
+main(){
+double total;
+//INPUT
+cout<<"----------INPUT NILAI----------\n";
+SNI.nilai[0]=NilaiG(" UTS ");
+SNI.nilai[1]=NilaiG(" UAS ");
+SNI.nilai[2]=NilaiG("TUGAS");
+SNI.nilai[3]=NilaiG("ABSEN");cout<<endl;
+//RUMUS
+SNI.jml[0]=(SNI.nilai[0]*20)/100;
+SNI.jml[1]=(SNI.nilai[1]*30)/100;
+SNI.jml[2]=(SNI.nilai[2]*35)/100;
+SNI.jml[3]=(SNI.nilai[3]*15)/100;
+//OUTPUT
+cout<<"----------OUTPUT NILAI----------\n";
+cout<<" Nilai UTS   : "<<SNI.jml[0]<<endl;
+cout<<" Nilai UAS   : "<<SNI.jml[1]<<endl;
+cout<<" Nilai Tugas : "<<SNI.jml[2]<<endl;
+cout<<" Nilai ABSEN : "<<SNI.jml[3]<<endl;
+total=SNI.jml[0]+SNI.jml[1]+SNI.jml[2]+SNI.jml[3];
+cout<<" Total Nilai : "<<total;
+IF(total);
+return 0;
+}
